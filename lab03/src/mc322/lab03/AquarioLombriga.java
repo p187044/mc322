@@ -34,6 +34,7 @@ public class AquarioLombriga{
     }
     
     public String apresenta() {
+    	//função que constrói a lombriga e o aquário com base nas informações
     	StringBuilder lombrigaAquario = new StringBuilder();
     	int i = 1;
         int auxTamanhoLombriga = this.tamanhoLombriga - 1;

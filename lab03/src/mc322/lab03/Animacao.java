@@ -3,17 +3,18 @@ package mc322.lab03;
 public class Animacao {
     String infoAquarioLombriga;
     String comandosAnimacao;
-	int posicaoAnimacao;
+	int posicaoAnimacao; //variável que controla em qual animação a lombriga se encontra
     int quantidadeAnimacao;
 	AquarioLombriga aquarioLombriga;
 	
 	public Animacao(String animacao) {
-		this.posicaoAnimacao = 0;
+		this.posicaoAnimacao = 0; 
 		
 		this.infoAquarioLombriga = animacao.substring(0, 6);
 		this.comandosAnimacao = animacao.substring(6);
         this.quantidadeAnimacao = this.comandosAnimacao.length();
 		
+        //lendo as informações de tamanho do aquário, tamanho da lombriga e posição da lombriga, respectivamente
 		int vetorInfo[] = new int[3];
 		vetorInfo[0] = 10 * Integer.parseInt(this.infoAquarioLombriga.substring(0, 1)) + Integer.parseInt(this.infoAquarioLombriga.substring(1, 2));
 		vetorInfo[1] = 10 * Integer.parseInt(this.infoAquarioLombriga.substring(2, 3)) + Integer.parseInt(this.infoAquarioLombriga.substring(3, 4));
@@ -27,6 +28,7 @@ public class Animacao {
 	}
 	
 	public void passo() {
+		//função que verifica qual ação a lombriga executar
         if(this.quantidadeAnimacao >= this.posicaoAnimacao){
             char[] comandos = this.comandosAnimacao.toCharArray();
             switch(comandos[this.posicaoAnimacao]) {
